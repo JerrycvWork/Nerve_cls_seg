@@ -21,7 +21,7 @@
 
 ### 1.2. Table of Contents
 
-- [Nerve Classification and Segmentation]
+- Nerve Classification and Segmentation
   * [1. Preface](#1-preface)
     + [1.1. :fire: NEWS :fire:](#11--fire--news--fire-)
     + [1.2. Table of Contents](#12-table-of-contents)
