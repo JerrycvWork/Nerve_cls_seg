@@ -33,7 +33,7 @@
   * [3. Proposed Baseline](#3-proposed-baseline)
     + [3.1 Training/Testing](#31-training-testing)
     + [3.2 Evaluating your trained model:](#32-evaluating-your-trained-model-)
-    + [3.3 Pre-computed maps:](#33-pre-computed-maps)
+    + [3.3 More Result:](#33-More-Result) 
   * [4. Citation](#4-citation)
   * [5. TODO LIST](#5-todo-list)
   * [6. FAQ](#6-faq)
@@ -173,24 +173,40 @@ a single GeForce RTX 3080 GPU of 10 GB Memory.
 
 ### 3.2 Evaluating your trained model:
 
+Python: For Classification, we use commercial software to calculate metrics. For Segmentation, the evaluation code is `dice_iou.py`.
 
+### 3.3 More Result: 
 
-### 3.3 Pre-computed maps: 
-
-
+Coming Soon!
 
 ## 4. Citation
 
-
+Please cite our paper if you find the work useful: 
 
 ## 5. TODO LIST
 
+> If you want to improve the usability or any piece of advice, please feel free to contact me directly ([E-mail](gepengai.ji@gmail.com)).
 
+- [ ] Support more Classification Networks (
+[ResNeXt](https://github.com/facebookresearch/ResNeXt), 
+[ResNeSt](https://github.com/zhanghang1989/ResNeSt), 
+[Vision Transformer](https://github.com/google-research/vision_transformer),
+and 
+[Swin Transformer](https://github.com/microsoft/Swin-Transformer) 
+etc.)
+
+- [ ] Support more Segmentation Networks.
+
+- [ ] Support lightweight architecture and real-time inference, like MobileNet, SqueezeNet.
+
+- [ ] Add more comprehensive competitors.
 
 ## 6. FAQ
 
-
+Coming Soon!
 
 ## 7. License
 
+The source code is free for research and education use only. Any comercial use should get formal permission first.
 
+---
