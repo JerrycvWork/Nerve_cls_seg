@@ -14,9 +14,9 @@
 
 ### 1.1. :fire: NEWS :fire:
 
-- [2020/06/24] Release training/testing code.
+- [2022/06/22] Release training/testing code.
 
-- [2020/03/24] Create repository.
+- [2022/06/22] Create repository.
 
 
 ### 1.2. Table of Contents
