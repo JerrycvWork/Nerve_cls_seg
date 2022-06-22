@@ -118,19 +118,57 @@ a single GeForce RTX 3080 GPU of 10 GB Memory.
 
     > Note that, the Official Source of Tensorflow 1.13.1 may not support the Ampere Structure GPU (NVIDIA RTX 30 Series), and you may need to download Tensorflow at the [source of NVIDIA](https://github.com/NVIDIA/tensorflow).
 
-    + Or to apply the command
+    + Or to apply the command: `pip install -r requirements.txt`
 
-    `pip install -r requirements.txt`
 
 1. Downloading necessary data:
 
+  + downloading dataset (Training, Testing and Validating) and move it into `./data/`, 
+    which can be found in this [download link (Onedrive)](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/EfUTJTiaiZdLs_-ZQYEoXwwBAW6GLyi0HGx4qyluNYeLXg?e=lkOcqL).
+  
+  + downloading external test set and move it into `./example_data/`, 
+    which can be found in this [download link (Onedrive)](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/EXP9pL7rdR5Pg9PoVlAtujkBZWgD4cN7tPlC9WaTaLa3yA?e=f5cmos).
+    
+  + downloading classification weights and move it into root, 
+    which can be found in this [download link (Onedrive)](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/ESHTi0OQfEBDl0pTEd4EWyMBjXrKj0yxWaR4jUOHarH9Vw?e=4em0Mm).
+    
+  + downloading segmentation weights and move it into root,
+    which can be found in this [download link (Onedrive))](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/EXSUKzDdX_NLn8c0Q6phJmkBCBlgOvMlhvbkK6HhLLMmuQ?e=CHqZhs).
 
    
 1. Training Configuration:
 
+  + Assigning your costumed path. For example:
+
+    `--train_path` in `train.py` (Training Data Path),
+
+    `--valid_path` in `train.py` (Validating Data Path),
+
+    `model_path` in `train.py` (The saved Weight Path),
+  
+  + Configurate the setting. For example:
+
+    `batch_size` in `train.py` (Batch Size),
+
+    `epochs` in `train.py` (Round of Training),
+    
+    `lr` in `train.py` (Initial Learning Rate),    
+
+    `shape` in `train.py` (The shape of input image),
+    
+  + Start Training!
 
 1. Testing Configuration:
 
+  + Assigning your costumed path. For example:
+
+    `--folder_name` in `link_copy.py` (External Test Set Path),
+
+    `model_seg ` in `link_copy.py` (Saved Segmentation Weight),
+
+    Result will be generated at `--folder_name + /output/`
+    
+  + Start Testing!
 
 
 ### 3.2 Evaluating your trained model:
