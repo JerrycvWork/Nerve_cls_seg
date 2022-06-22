@@ -109,16 +109,16 @@ a single GeForce RTX 3080 GPU of 10 GB Memory.
 
 **1. Configuring your environment (Prerequisites):** 
    
-    Note that the pipeline is only tested on Ubuntu OS with the following environments. 
+  > Note that the pipeline is only tested on Ubuntu OS with the following environments. 
     It may work on other operating systems as well but we do not guarantee that it will.
     
-    + Creating a virtual environment in terminal: `conda create -n Nerveseg python=3.7`.
+  + Creating a virtual environment in terminal: `conda create -n Nerveseg python=3.7`.
     
-    + Installing necessary packages: Tensorflow 1.13.1, Keras 2.3.0
+  + Installing necessary packages: Tensorflow 1.13.1, Keras 2.3.0
 
-    > Note that, the Official Source of Tensorflow 1.13.1 may not support the Ampere Structure GPU (NVIDIA RTX 30 Series), and you may need to download Tensorflow at the [source of NVIDIA](https://github.com/NVIDIA/tensorflow).
+  > Note that, the Official Source of Tensorflow 1.13.1 may not support the Ampere Structure GPU (NVIDIA RTX 30 Series), and you may need to download Tensorflow at the [source of NVIDIA](https://github.com/NVIDIA/tensorflow).
 
-    + Or to apply the command: `pip install -r requirements.txt`
+  + Or to apply the command: `pip install -r requirements.txt`
 
 
 **2. Downloading necessary data:** 
