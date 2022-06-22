@@ -41,9 +41,13 @@
 ### 1.3. State-of-the-art Approaches  
 
 
+
+
 ## 2. Overview
 
+
 ### 2.1. Introduction
+
 
 
 ### 2.2. Framework Overview
@@ -58,8 +62,8 @@
 
 ### 3.1. Training/Testing
 
-The training and testing experiments are conducted using [PyTorch](https://github.com/pytorch/pytorch) with 
-a single GeForce RTX TITAN GPU of 24 GB Memory.
+The training and testing experiments are conducted using [Tensorflow]([https://github.com/pytorch/pytorch](https://www.tensorflow.org/?hl=zh-cn)) and [Keras](https://keras.io/) with 
+a single GeForce RTX 3080 GPU of 10 GB Memory.
 
 > Note that our model also supports low memory GPU, which means you can lower the batch size
 
