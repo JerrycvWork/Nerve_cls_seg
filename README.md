@@ -52,18 +52,32 @@
 ## 2. Overview
 
 
-
-
 ### 2.1. Introduction
 
+In vivo SHG reflectance imaging of the sciatic nerve, the nerve-specific reflectance video is often recorded for further analysis in surgery. In clinical practice, segmenting and identifying the nerve from the nerve-specific reflectance video is of great importance since it provides valuable information for diagnosis and surgery. However, accurately segmenting out the nerve is a challenging task, for three major reasons: (i) the dataset with fine annotations is lack for deep learning-based application; (ii) the frames may not contains the nerves and only the segmentation network may hard to avoid false segmenting; (iii) nerves have a diversity of size, shape, and location.
+
+To address these challenges, it is proposed the nerve-specific reflectance video dataset with labels of surgery stages and nerve masks and a pipeline for accurate surgery stage identification and nerve segmentation in reflectance video. Specifically, the frames of video are input to the pipeline and get the labels of the surgery stage (General Field, Tendon, and Nerve) through DenseNet201. For the frames that contain nerves, the pipeline then generates the nerve masks by the DoubleUNet segmentation network. 
+
+Quantitative and qualitative evaluations on training, testing, and validating sets across metrics in classification and segmentation show that our pipeline improves the classification and segmentation accuracy significantly for the nerve-specific reflectance video.
+
+### 2.3. Framework Overview
+
+<p align="center">
+    <img src="Readme_figure\pipeline.png"/> <br />
+    <em> 
+    Figure 1: Schematic diagram of the multi-task deep learning-based nerve imaging system to process the nerve-specific reflectance video recording.
+    </em>
+</p>
 
 
-### 2.2. Framework Overview
+### 2.4. Qualitative Results
 
-
-
-### 2.3. Qualitative Results
-
+<p align="center">
+    <img src="Readme_figure\quantative.png"/> <br />
+    <em> 
+    Figure 2: Representative video frame images of pseudo-colored nerves delineation by different neural networks. 
+    </em>
+</p>
 
 
 ## 3. Proposed Baseline
