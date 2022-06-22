@@ -42,11 +42,11 @@
 
 1. Huang, Gao et al. “Densely Connected Convolutional Networks.” 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR) (2017): 2261-2269.
 
-paper link: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8099726
+   paper link: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8099726
 
 2. Jha, Debesh et al. “DoubleU-Net: A Deep Convolutional Neural Network for Medical Image Segmentation.” 2020 IEEE 33rd International Symposium on Computer-Based Medical Systems (CBMS) (2020): 558-564.
 
-paper link: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9183321
+   paper link: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9183321
 
 
 ## 2. Overview
