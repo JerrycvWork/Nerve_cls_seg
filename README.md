@@ -9,7 +9,7 @@
 
 - This repository provides code for "_**Nerve Classification and Segmentation**_"
 
-- If you have any questions about our paper, feel free to contact me. And if you are using the work for your research, please cite this paper ([BibTeX](#4-citation)).
+- If you have any questions about our paper, feel free to contact us. And if you are using the work for your research, please cite this paper ([BibTeX](#4-citation)).
 
 
 ### 1.1. :fire: NEWS :fire:
