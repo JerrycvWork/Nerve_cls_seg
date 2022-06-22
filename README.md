@@ -70,12 +70,14 @@ a single GeForce RTX 3080 GPU of 10 GB Memory.
 
 1. Configuring your environment (Prerequisites):
    
-    Note that PraNet is only tested on Ubuntu OS with the following environments. 
+    Note that the pipeline is only tested on Ubuntu OS with the following environments. 
     It may work on other operating systems as well but we do not guarantee that it will.
     
-    + Creating a virtual environment in terminal: `conda create -n PraNet python=3.6`.
+    + Creating a virtual environment in terminal: `conda create -n Nerveseg python=3.7`.
     
-    + Installing necessary packages: PyTorch 1.1
+    + Installing necessary packages: Tensorflow 1.13.1, Keras 2.3.0
+
+    > Note that, the Official Source of Tensorflow 1.13.1 may not support the Ampere Structure GPU (NVIDIA RTX 30 Series), and you may need to download Tensorflow at the [source of NVIDIA](https://github.com/NVIDIA/tensorflow).
 
 1. Downloading necessary data:
 
