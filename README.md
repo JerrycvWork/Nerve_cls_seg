@@ -33,7 +33,7 @@
   * [3. Proposed Baseline](#3-proposed-baseline)
     + [3.1 Training/Testing](#31-training-testing)
     + [3.2 Evaluating your trained model:](#32-evaluating-your-trained-model-)
-    + [3.3 More Result:](#33-More-Result) 
+    + [3.3 More Result](#33-More-Result) 
   * [4. Citation](#4-citation)
   * [5. TODO LIST](#5-todo-list)
   * [6. FAQ](#6-faq)
@@ -107,7 +107,7 @@ a single GeForce RTX 3080 GPU of 10 GB Memory.
 > Note that our model also supports low memory GPU, which means you can lower the batch size
 
 
-1. Configuring your environment (Prerequisites):
+** 1. Configuring your environment (Prerequisites):** 
    
     Note that the pipeline is only tested on Ubuntu OS with the following environments. 
     It may work on other operating systems as well but we do not guarantee that it will.
@@ -121,7 +121,7 @@ a single GeForce RTX 3080 GPU of 10 GB Memory.
     + Or to apply the command: `pip install -r requirements.txt`
 
 
-2. Downloading necessary data:
+** 2. Downloading necessary data:** 
 
   + downloading dataset (Training, Testing and Validating) and move it into `./data/`, 
     which can be found in this [download link (Onedrive)](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/EfUTJTiaiZdLs_-ZQYEoXwwBAW6GLyi0HGx4qyluNYeLXg?e=lkOcqL).
@@ -136,7 +136,7 @@ a single GeForce RTX 3080 GPU of 10 GB Memory.
     which can be found in this [download link (Onedrive))](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/EXSUKzDdX_NLn8c0Q6phJmkBCBlgOvMlhvbkK6HhLLMmuQ?e=CHqZhs).
 
    
-3. Training Configuration:
+** 3. Training Configuration:** 
 
   + Assigning your costumed path. For example:
 
@@ -158,7 +158,7 @@ a single GeForce RTX 3080 GPU of 10 GB Memory.
     
   + Start Training!
 
-4. Testing Configuration:
+** 4. Testing Configuration:** 
 
   + Assigning your costumed path. For example:
 
@@ -185,7 +185,7 @@ Please cite our paper if you find the work useful:
 
 ## 5. TODO LIST
 
-> If you want to improve the usability or any piece of advice, please feel free to contact me directly ([E-mail](gepengai.ji@gmail.com)).
+> If you want to improve the usability or any piece of advice, please feel free to contact me directly ([E-mail]()).
 
 - [ ] Support more Classification Networks (
 [ResNeXt](https://github.com/facebookresearch/ResNeXt), 
