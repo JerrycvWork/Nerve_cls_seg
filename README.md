@@ -109,5 +109,3 @@ a single GeForce RTX TITAN GPU of 24 GB Memory.
 ## 7. License
 
 
-
-**[⬆ back to top](#0-preface)**
