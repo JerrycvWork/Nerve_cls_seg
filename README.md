@@ -79,6 +79,7 @@ Quantitative and qualitative evaluations on training, testing, and validating se
     Figure 2: The performance of different classification models for “nerve” category images recognition. 
     </em>
 </p>
+
 > Evaluation of Segmentation
 <p align="center">
     <img src="Readme_figure\seg_performance.png"/> <br />
@@ -86,6 +87,7 @@ Quantitative and qualitative evaluations on training, testing, and validating se
     Figure 3: The performance of different neural network models for nerve delineation. 
     </em>
 </p>
+
 > Visualization of Segmentation
 <p align="center">
     <img src="Readme_figure\quantative.png"/> <br />
@@ -115,6 +117,10 @@ a single GeForce RTX 3080 GPU of 10 GB Memory.
     + Installing necessary packages: Tensorflow 1.13.1, Keras 2.3.0
 
     > Note that, the Official Source of Tensorflow 1.13.1 may not support the Ampere Structure GPU (NVIDIA RTX 30 Series), and you may need to download Tensorflow at the [source of NVIDIA](https://github.com/NVIDIA/tensorflow).
+
+    + Or to apply the command
+
+    `pip install -r requirements.txt`
 
 1. Downloading necessary data:
 
