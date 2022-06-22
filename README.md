@@ -72,10 +72,25 @@ Quantitative and qualitative evaluations on training, testing, and validating se
 
 ### 2.4. Qualitative Results
 
+> Evaluation of Classification
+<p align="center">
+    <img src="Readme_figure\cls_performance.png"/> <br />
+    <em> 
+    Figure 2: The performance of different classification models for “nerve” category images recognition. 
+    </em>
+</p>
+> Evaluation of Segmentation
+<p align="center">
+    <img src="Readme_figure\seg_performance.png"/> <br />
+    <em> 
+    Figure 3: The performance of different neural network models for nerve delineation. 
+    </em>
+</p>
+> Visualization of Segmentation
 <p align="center">
     <img src="Readme_figure\quantative.png"/> <br />
     <em> 
-    Figure 2: Representative video frame images of pseudo-colored nerves delineation by different neural networks. 
+    Figure 4: Representative video frame images of pseudo-colored nerves delineation by different neural networks. 
     </em>
 </p>
 
