@@ -38,54 +38,31 @@ total_dice=[]
 
 counter=0
 
-for filename in glob.glob(r"D:\Results\Nerve Segmentation\val\mask/*"):
+for filename in glob.glob(r"./val/mask/*"):
     gt=cv2.imread(filename)
-    pred = cv2.imread(r"D:\Results\Nerve Segmentation\20220426\result\val\ori_unet\\"+filename.split("\\")[-1])
+    pred = cv2.imread(r"./Results/Nerve Segmentation/20220426/result/val/ori_unet/"+filename.split("/")[-1])
 
 
     pred=cv2.resize(pred,(gt.shape[1],gt.shape[0]))
 
     print(filename)
 
-    if 1:
-        gt = gt.astype(np.float32) / 255
-        pred = pred.astype(np.float32) / 255
+    gt = gt.astype(np.float32) / 255
+    pred = pred.astype(np.float32) / 255
 
-        gt[gt>0.5]=1
-        gt[gt < 0.5] = 0
-        pred[pred > 0.5] = 1
-        pred[pred < 0.5] = 0
-
-
-        total_dice.append(dice_coef(pred, gt))
-        #print("Dice: ", dice_coef(pred, gt))
-        #total_acc += compute_acc(pred, gt)
-        #print("ACC: ", compute_acc(pred, gt))
-        #prec, rec = compute_precision_recall(pred, gt)
-
-        #total_rec += np.mean(np.asarray(rec))
-        total_iou.append(compute_iou(pred, gt))
-        #print("IoU: ", compute_iou(pred, gt))
-        #total_ber += compute_ber(pred, gt)
-        #print("BER: ", compute_ber(pred, gt))
-
-        counter += 1
+    gt[gt>0.5]=1
+    gt[gt < 0.5] = 0
+    pred[pred > 0.5] = 1
+    pred[pred < 0.5] = 0
 
 
-
-
-#print("Summary: ")
-#print(total_iou/counter)
-#print(total_acc/counter)
-#print(total_rec/counter)
-#print(total_dice/counter)
-#print(total_ber/counter)
+    total_dice.append(dice_coef(pred, gt))
+    total_iou.append(compute_iou(pred, gt))
+    counter += 1
 
 print("Pred 95%: ")
 print(mean_confidence_interval(total_iou))
 print(mean_confidence_interval(total_dice))
-
-
 
 print("Mean std")
 print(np.mean(np.asarray(total_iou)),np.std(np.asarray(total_iou)))

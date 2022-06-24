@@ -1,3 +1,5 @@
+#Predicted Video Generation
+
 import os
 import glob
 import imageio
@@ -8,7 +10,7 @@ import numpy as np
 
 
 
-png_dir = '/home/htihe/NerveSegmentation/Video_data/S6/output2/'
+png_dir = './output2/'
 
 images = []
 file_names = glob.glob(png_dir+"*.jpg")
@@ -24,16 +26,12 @@ for file_name in file_names:
 
 size=(1080,1080)
 
-out = cv2.VideoWriter('/home/htihe/NerveSegmentation/Video_data/S60''/sample_v2.avi',cv2.VideoWriter_fourcc(*'DIVX'), 18, size)
+out = cv2.VideoWriter('sample_v2.avi',cv2.VideoWriter_fourcc(*'DIVX'), 18, size)
 
 for i in range(len(images)):
     img = cv2.imread(images[i])
-    #img = cv2.resize(img, (512, 512))
-    #height, width, layers = img.shape
-    #size = (width, height)
     out.write(img)
 out.release()
 
 
-# Opening wound, tendon, opennerve, nerve, trannerve
-# Number
+# Opening wound, Tendon, Opening Wound to Nerve, Nerve, Transaction to Nerve

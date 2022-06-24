@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
 
 import os
 import numpy as np
@@ -17,8 +15,6 @@ from model import build_model
 from utils import *
 from metrics import *
 
-
-# In[2]:
 
 
 
@@ -67,15 +63,15 @@ if __name__ == "__main__":
     valid_path = "data/validation/"
 
     ## Training
-    train_x = sorted(glob(os.path.join(train_path, "img", "*.jpg")))
-    train_y = sorted(glob(os.path.join(train_path, "masks_machine", "*.png")))
+    train_x = sorted(glob(os.path.join(train_path, "image", "*.png")))
+    train_y = sorted(glob(os.path.join(train_path, "mask", "*.png")))
 
     ## Shuffling
     train_x, train_y = shuffling(train_x, train_y)
 
     ## Validation
-    valid_x = sorted(glob(os.path.join(valid_path, "img", "*.jpg")))
-    valid_y = sorted(glob(os.path.join(valid_path, "masks_machine", "*.png")))
+    valid_x = sorted(glob(os.path.join(valid_path, "image", "*.png")))
+    valid_y = sorted(glob(os.path.join(valid_path, "mask", "*.png")))
 
     model_path = "files/model.h5"
     batch_size = 3

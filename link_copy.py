@@ -28,7 +28,7 @@ from utils import *
 
 
 #validation_dir = os.path.join('Nerve_600ms/')
-folder_name = "/home/htihe/NerveSegmentation/Video_data/S6/"
+folder_name = "./example_data/"
 validation_dir = os.path.join(folder_name+'/input/')
 hd_dir = os.path.join(folder_name+'/input/')
 mask_dir = os.path.join(folder_name+'/annotation/')
@@ -77,34 +77,7 @@ validation_hd_dataset = image_dataset_from_directory(hd_dir,
                                                   batch_size=BATCH_SIZE,
                                                   image_size=org_size)
 
-
-#print(validation_dataset.element_spec)
 print("class_names: ",validation_dataset.file_paths)
-#plt.figure(figsize=(10, 10))
-
-"""
-for (images, labels),names in validation_dataset.take(10):
-  for i in range(min(9,BATCH_SIZE)):
-    print("name:",names[i].numpy())
-    #print("position:",real_order.index(names[i].numpy().decode("utf-8")))
-    ax = plt.subplot(3, 3, i + 1)
-    plt.imshow(images[i].numpy().astype("uint8"))
-    plt.title(class_names[labels[i]])
-    plt.axis("off")
-"""
-
-
-
-'''
-plt.figure(figsize=(10, 10))
-for images, labels in validation_hd_dataset.take(1):
-  for i in range(min(9,BATCH_SIZE)):
-    ax = plt.subplot(3, 3, i + 1)
-    plt.imshow(images[i].numpy().astype("uint8"))
-    plt.title(class_names[labels[i]])
-    plt.axis("off")
-'''
-
 
 def read_image(x):
     image = cv2.imread(x, cv2.IMREAD_COLOR)
@@ -304,19 +277,11 @@ def load_model_weight_newdb(path):
     # return model
 
 
-model_seg = load_model_weight_newdb("/home/htihe/NerveSegmentation/2020-CBMS-DoubleU-Net-master/files/model.h5")
-#model_seg = tf.keras.models.load_model('saved_model/model1-usePretrained')
-#model_seg =load_model_weight('5videos_20.h5')
-#print(model_seg.summary())
-
-
-
-
-#model_cla = tf.keras.models.load_model("/home/htihe/NerveSegmentation/Classification/Classification_weighting/SelectedClassificationNN/DenseNET201_018/018")
-model_cla = tf.keras.models.load_model("/home/htihe/NerveSegmentation/Classification/Classification_weighting/denseNET169_17_21/018")
+model_seg = load_model_weight_newdb("model.h5")
+model_cla = tf.keras.models.load_model("./denseNET169_17_21/018")
 
 #model_cla.summary()
-#len(model_cla.trainable_variables)
+
 
 print("Generate predictions for validation data")
 prediction_score_for_ROC = []
@@ -343,16 +308,10 @@ for j in range(max_batch_num):
     image_batch, label_batch= validation_dataset_iterator.next()
     image_mask_batch, label_mask_batch = mask_dataset_iterator.next()
     image_hd_batch, label_hd_batch = validation_hd_dataset_iterator.next()
-    #order = real_order.index(names.decode('utf-8'))
-    #if (ignoreTrigger == True and ignoreTriggerMode == True and order > ignoreTriggerIndex):
-        #predictions = np.array([[9.9999976e-01, 1.8278526e-07, 7.3539009e-16]])
-    #else:
     start = time.time()
     predictions = model_cla.predict_on_batch(image_batch)
     time1=time.time()-start
-    #print("predictions:", predictions)
     prediction_true_label = [*prediction_true_label, *label_batch]
-    #print("prediction_true_label:", prediction_true_label)
     for i in range(len(predictions)):
         name = output_dir + '{}'.format(validation_dataset.file_paths[j * BATCH_SIZE].split("/")[-1])
         print(name)
@@ -368,14 +327,7 @@ for j in range(max_batch_num):
         if (np.argmax(predictions[i]) == 0):
             if (np.argmax(predictions[i]) == label_batch[i]):
                 print("predict is nerve and true")
-                """
-                if (ignoreTriggerMode == True and ignoreTrigger != True):
-                    ignoreTrigger = True
-                    ignoreTriggerIndex = order
-                    print("ignore triggered! Index:", order)
-                """
                 _addIOU = True
-                # np.set_printoptions(threshold=np.inf)
                 dst, _iouValue,time2 = evaluate_1(model_seg, image_batch[i], image_hd_batch[i], image_mask_batch[i])
             else:
                 print("predict is nerve and false")
@@ -422,22 +374,3 @@ for j in range(max_batch_num):
             #cv2.putText(dst, "IOU:" + str(_iouValue), (1080 - maxWidth, 90), cv2.FONT_HERSHEY_SIMPLEX, 1.2,
                         #(0, 255, 255), 1, cv2.LINE_AA)
         cv2.imwrite(name, dst)
-"""
-print("mean time for each pic (classify +- segment): ", np.mean(time_array))
-print("mean iou value ", np.mean(iouHistory))
-
-predictions = np.array(prediction_flattened)
-prediction_true_label = np.array(prediction_true_label)
-prediction_score_for_ROC = np.array(prediction_score_for_ROC)
-prediction_label_for_ROC = np.array(prediction_label_for_ROC)
-
-print("predictions:", predictions)
-print("prediction_true_label:", prediction_true_label)
-print("prediction_score_for_ROC:", prediction_score_for_ROC)
-print("prediction_label_for_ROC:", prediction_label_for_ROC)
-tf.math.confusion_matrix(prediction_true_label, predictions)
-
-
-
-
-"""

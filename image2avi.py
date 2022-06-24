@@ -1,3 +1,5 @@
+#Video Generation With Ground Truth
+
 import os
 import glob
 import imageio
@@ -7,7 +9,7 @@ import numpy as np
 
 
 
-png_dir = '/home/htihe/NerveSegmentation/Video_data/S3_reduce_169/output2/'
+png_dir = './output2/'
 
 images = []
 file_names = glob.glob(png_dir+"Opening Wound__*.jpg")
@@ -80,12 +82,11 @@ for file_name in file_names:
     images.append(img)
     print(file_name)
 
-out = cv2.VideoWriter('/home/htihe/NerveSegmentation/Video_data/S3_reduce_169/sample_v2.avi',cv2.VideoWriter_fourcc(*'DIVX'), 1.6, size)
+out = cv2.VideoWriter('sample_v2.avi',cv2.VideoWriter_fourcc(*'DIVX'), 1.6, size)
 
 for i in range(len(images)):
     out.write(images[i])
 out.release()
 
 
-# Opening wound, tendon, opennerve, nerve, trannerve
-# Number
+# Opening wound, Tendon, Opening Wound to Nerve, Nerve, Transaction to Nerve
