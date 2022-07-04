@@ -171,10 +171,6 @@ a single GeForce RTX 3080 GPU of 10 GB Memory.
 
 Python: For Classification, we use commercial software to calculate metrics. For Segmentation, the evaluation code is `dice_iou.py`.
 
-### 3.3 More Result: 
-
-Coming Soon!
-
 ## 4. Citation
 
 Please cite our paper if you find the work useful: 
