@@ -12,14 +12,7 @@
 - If you have any questions about our paper, feel free to contact us. And if you are using the work for your research, please cite this paper ([BibTeX](#4-citation)).
 
 
-### 1.1. :fire: NEWS :fire:
-
-- [2022/06/22] Release training/testing code.
-
-- [2022/06/22] Create repository.
-
-
-### 1.2. Table of Contents
+### 1.1. Table of Contents
 
 - Nerve Classification and Segmentation
   * [1. Preface](#1-preface)
@@ -38,7 +31,7 @@
   * [5. TODO LIST](#5-todo-list)
   * [6. FAQ](#6-faq)
 
-### 1.3. State-of-the-art Approaches  
+### 1.2. State-of-the-art Approaches  
 
 1. Huang, Gao et al. “Densely Connected Convolutional Networks.” 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR) (2017): 2261-2269.
 
@@ -52,21 +45,12 @@
 ## 2. Overview
 
 
-### 2.1. Introduction (OLD)
+### 2.1. Introduction of framework
 
-In vivo SHG reflectance imaging of the sciatic nerve, the nerve-specific reflectance video is often recorded for further analysis in surgery. In clinical practice, segmenting and identifying the nerve from the nerve-specific reflectance video is of great importance since it provides valuable information for diagnosis and surgery. However, accurately segmenting out the nerve is a challenging task, for three major reasons: (i) the dataset with fine annotations is lack for deep learning-based application; (ii) the frames may not contains the nerves and only the segmentation network may hard to avoid false segmenting; (iii) nerves have a diversity of size, shape, and location.
-
-To address these challenges, it is proposed the nerve-specific reflectance video dataset with labels of surgery stages and nerve masks and a pipeline for accurate surgery stage identification and nerve segmentation in reflectance video. Specifically, the frames of video are input to the pipeline and get the labels of the surgery stage (General Field, Tendon, and Nerve) through DenseNet201. For the frames that contain nerves, the pipeline then generates the nerve masks by the DoubleUNet segmentation network. 
-
-Quantitative and qualitative evaluations on training, testing, and validating sets across metrics in classification and segmentation show that our pipeline improves the classification and segmentation accuracy significantly for the nerve-specific reflectance video.
+In this study, we displayed our automated nerve detection pipeline using nerve specific reflectance video imaging to achieve simultaneous nerve detection and demonstrate the potential clinical utility. We firstly fine-tuned DenseNet201 model to recognize all video frames containing nerve, then nerve delineation would be performed from the previously recognized video frames containing nerve by the optimized DoubleUNet. Taking advantage of growing varieties of deep learning algorithms, comparative analysis was also performed with different deep learning algorithms to recognize nerve anatomical structure and quantify the exact nerve location will also conducted.    
 
 
-### 2.2. Introduction (New)
-
-In this study, we describe the development of intraoperative imaging system through purposeful screening the possible wavelength for peripheral nerve identification and the design of real-scenario inspired pipeline for nerve detection, resulting to spotlight nerve immediately during surgery. We used BALB/c mice to perform spectroscopic analysis to measure the reflectance using two-photon microscopy. The second-harmonic generation (SHG) signal generated from two-photon microscopy can allow deep tissue imaging with reduction of light scattering signal as reflectance light signal. Nerve and its surrounding tissues including muscle, fat, tendon, and vein were screened for their reflectance properties under ex vivo and in vivo condition using two-photon microscopy to calculate nerve specificity.  Nerve specificity evaluation involved to nerve to background tissue ratio (NBR) quantification and usually compared with muscle and adipose tissue, while greater value of NBR demonstrate effective nerve specificity. Imaging performance comparison between conventional fluorescent myelin stains and nerve-specific reflectance were conducted based on nerve specificity using two-photon microscopy. We had further showcased intraoperative imaging performance to identify nerve using two different murine cancer models by subcutaneous injection of malignant tumour cells from 4T1-luc2-RFP breast cancer and K562-GFP cell line. Spectral imaging performance had also showcased by 4T1 murine cancer model using stereomicroscope equipped with customized nerve-specific reflectance optical filter to mimic current optical setting used in FGS. Finally, we displayed our automated pipeline using nerve specific reflectance video imaging to achieve simultaneous nerve detection and demonstrate the potential clinical utility. We firstly fine-tuned DenseNet201 model to recognize all video frames containing nerve, then nerve delineation would be performed from the previously recognized video frames containing nerve by the optimized DoubleUNet to highlight with pseudo-color. Taking advantage of growing varieties of deep learning algorithms, comparative analysis for different models to recognize nerve anatomical structure and quantify the exact nerve location will also conducted.  
-
-
-### 2.3. Framework Overview
+### 2.2. Framework Overview
 
 <p align="center">
     <img src="Readme_figure\pipeline.png"/> <br />
@@ -76,7 +60,7 @@ In this study, we describe the development of intraoperative imaging system thro
 </p>
 
 
-### 2.4. Qualitative Results
+### 2.3. Qualitative Results
 
 > Visualization of Segmentation
 <p align="center">
