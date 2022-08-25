@@ -47,7 +47,7 @@
 
 ### 2.1. Introduction of framework
 
-In this study, we displayed our automated nerve detection pipeline using nerve specific reflectance video imaging to achieve simultaneous nerve detection and demonstrate the potential clinical utility. We firstly fine-tuned DenseNet201 model to recognize all video frames containing nerve, then nerve delineation would be performed from the previously recognized video frames containing nerve by the optimized DoubleUNet. Taking advantage of growing varieties of deep learning algorithms, comparative analysis was also performed with different deep learning algorithms to recognize nerve anatomical structure and quantify the exact nerve location will also conducted.    
+In this study, we displayed our automated nerve detection pipeline using nerve-specific reflectance video imaging to achieve simultaneous nerve detection and demonstrate the potential clinical utility. We firstly fine-tuned the DenseNet201 model to recognize all video frames containing nerves, then nerve delineation would be performed from the previously recognized video frames containing nerves by the optimized DoubleUNet. Taking advantage of the growing varieties of state-of-the-art deep learning algorithms, a comparative analysis was also performed with different deep learning algorithms to recognize nerve anatomical structure and quantify the exact nerve location.  
 
 
 ### 2.2. Framework Overview
