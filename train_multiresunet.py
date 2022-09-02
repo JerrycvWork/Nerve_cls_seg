@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 
 import os
 import numpy as np
@@ -14,14 +11,12 @@ from sklearn.model_selection import train_test_split
 from model import build_model
 from utils import *
 from metrics import *
-
-
-
+from MultiResUNet import MultiResUnet
 
 def read_image(x):
     x = x.decode()
     image = cv2.imread(x, cv2.IMREAD_COLOR)
-    image=cv2.resize(image,(224,224))
+    image=cv2.resize(image,(256,256))
     image = np.clip(image - np.median(image)+127, 0, 255)
     image = image/255.0
     image = image.astype(np.float32)
@@ -30,7 +25,7 @@ def read_image(x):
 def read_mask(y):
     y = y.decode()
     mask = cv2.imread(y, cv2.IMREAD_GRAYSCALE)
-    mask = cv2.resize(mask, (224, 224))
+    mask = cv2.resize(mask, (256, 256))
     mask = mask/255.0
     mask = mask.astype(np.float32)
     mask = np.expand_dims(mask, axis=-1)
@@ -40,12 +35,11 @@ def parse_data(x, y):
     def _parse(x, y):
         x = read_image(x)
         y = read_mask(y)
-        y = np.concatenate([y, y], axis=-1)
         return x, y
 
     x, y = tf.numpy_function(_parse, [x, y], [tf.float32, tf.float32])
-    x.set_shape([224, 224, 3])
-    y.set_shape([224, 224, 2])
+    x.set_shape([256, 256, 3])
+    y.set_shape([256, 256, 1])
     return x, y
 
 def tf_dataset(x, y, batch=8):
@@ -55,7 +49,6 @@ def tf_dataset(x, y, batch=8):
     dataset = dataset.repeat()
     dataset = dataset.batch(batch)
     return dataset
-
 
 if __name__ == "__main__":
     np.random.seed(42)
@@ -76,13 +69,13 @@ if __name__ == "__main__":
     valid_x = sorted(glob(os.path.join(valid_path, "image", "*.png")))
     valid_y = sorted(glob(os.path.join(valid_path, "mask", "*.png")))
 
-    model_path = "files/model.h5"
-    batch_size = 3
-    epochs = 20
+    model_path = "files/model_Multiresunet.h5"
+    batch_size = 4
+    epochs = 300
     lr = 1e-4
-    shape = (224, 224, 3)
+    shape = (256, 256, 3)
 
-    model = build_model(shape)
+    model = MultiResUnet(256,256,3)
     metrics = [
         dice_coef,
         iou,
@@ -119,11 +112,3 @@ if __name__ == "__main__":
             validation_steps=valid_steps,
             callbacks=callbacks,
             shuffle=False)
-    model.save("new.h5")
-
-
-# In[ ]:
-
-
-
-

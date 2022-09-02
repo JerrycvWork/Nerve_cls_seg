@@ -13,6 +13,7 @@ import tensorflow as tf
 import os
 tf.get_logger().setLevel('ERROR')
 
+
 #define parameters
 BATCH_SIZE = 12
 IMG_SIZE = (224, 224)
@@ -27,11 +28,31 @@ if os.path.exists(folder)<=0:
 model_path='./savemodel/'
 
 
+#Selection Range:"resnet50v2","resnet101v2","resnet152v2","densenet121","densenet169","densenet201","mobilenetv2"
+model_str="resnet152v2"
+
+def model_selection(ms):
+    if ms=="resnet50v2":
+        return tf.keras.applications.ResNet50V2(input_shape=IMG_SHAPE,include_top=False,weights='imagenet')
+    if ms=="resnet101v2":
+        return tf.keras.applications.ResNet101V2(input_shape=IMG_SHAPE,include_top=False,weights='imagenet')
+    if ms=="resnet152v2":
+        return tf.keras.applications.ResNet152V2(input_shape=IMG_SHAPE,include_top=False,weights='imagenet')
+    if ms=="densenet121":
+        return tf.keras.applications.DenseNet121(input_shape=IMG_SHAPE,include_top=False,weights='imagenet')
+    if ms=="densenet169":
+        return tf.keras.applications.DenseNet169(input_shape=IMG_SHAPE,include_top=False,weights='imagenet')
+    if ms=="densenet201":
+        return tf.keras.applications.DenseNet201(input_shape=IMG_SHAPE,include_top=False,weights='imagenet')
+    if ms=="mobilenetv2":
+        return tf.keras.applications.MobileNetV2(input_shape=IMG_SHAPE,include_top=False,weights='imagenet')
+
+
 PATH=os.getcwd()
 
-train_dir = os.path.join(PATH, '/home/alex/Documents/Nerve Project/Rearrange/classification/Rearrange/train')
-validation_dir = os.path.join(PATH, '/home/alex/Documents/Nerve Project/Rearrange/classification/Rearrange/val')
-#all_dir = os.path.join(PATH, '/home/alex/Documents/Nerve Project/Rearrange/classification/Rearrange/')
+train_dir = os.path.join(PATH, '/home/htihe/Data/NerveClassification/Rearrange/train')
+validation_dir = os.path.join(PATH, '/home/htihe/Data/NerveClassification/Rearrange/val')
+#all_dir = os.path.join(PATH, '/home/htihe/Data/NerveClassification/Rearrange/classification/Rearrange/')
 
 train_dataset = image_dataset_from_directory(train_dir ,
                                              shuffle=True,
@@ -73,9 +94,8 @@ normalization_layer = tf.keras.layers.experimental.preprocessing.Rescaling(1./25
 
 # Create the base model from the pre-trained model MobileNet V2
 IMG_SHAPE = IMG_SIZE + (3,)
-base_model = tf.keras.applications.DenseNet201(input_shape=IMG_SHAPE,
-                                               include_top=False,
-                                               weights='imagenet')
+
+base_model = model_selection(model_str)
 
 
 data_augmentation = tf.keras.Sequential([
