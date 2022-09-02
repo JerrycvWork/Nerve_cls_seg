@@ -5,6 +5,8 @@
 > Zebang He, 
 > Jung Sun Yoo, 
 
+- The Code for State-of-the-art Segmentation method shown in the figure is in Segmentation_SOTA branch.
+
 ## 1. Preface
 
 - This repository provides code for "_**Nerve Classification and Segmentation**_"
@@ -96,6 +98,8 @@ a single GeForce RTX 3080 GPU of 10 GB Memory.
 
 
 **2. Downloading necessary data:** 
+  
+  + Our dataset is also uploaded to Figshare. [download link (Figshare)](https://doi.org/10.6084/m9.figshare.20787751)
 
   + downloading dataset (Training, Testing and Validating) and move it into `./data/`, 
     which can be found in this [download link (Onedrive)](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/EfUTJTiaiZdLs_-ZQYEoXwwBAW6GLyi0HGx4qyluNYeLXg?e=lkOcqL).
@@ -165,6 +169,11 @@ a single GeForce RTX 3080 GPU of 10 GB Memory.
     Result will be generated at `--folder_name + /output/`
     
   + Start Testing!
+
+
+**5. Segmentation State-of-the-art methods:**
+  
+  + Please enter the Segmentation_SOTA branch. Under the folder ``
 
 
 ### 3.2 Evaluating your trained model:
