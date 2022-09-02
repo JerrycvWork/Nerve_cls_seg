@@ -107,73 +107,13 @@ a single GeForce RTX 3080 GPU of 10 GB Memory.
   + downloading external test set and move it into `./example_data/`, 
     which can be found in this [download link (Onedrive)](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/EXP9pL7rdR5Pg9PoVlAtujkBZWgD4cN7tPlC9WaTaLa3yA?e=f5cmos).
     
-  + downloading classification weights and move it into root, 
-    which can be found in this [download link (Onedrive)](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/ESHTi0OQfEBDl0pTEd4EWyMBjXrKj0yxWaR4jUOHarH9Vw?e=4em0Mm).
-    
-  + downloading segmentation weights and move it into root,
-    which can be found in this [download link (Onedrive))](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/EXSUKzDdX_NLn8c0Q6phJmkBCBlgOvMlhvbkK6HhLLMmuQ?e=CHqZhs).
-
    
 **3. Training Configuration:** 
 
-**3.1. Classification Model:** 
-  + Assigning your costumed path. For example:
-
-    `train_dir` in `train_cls.py` (Training Data Path),
-
-    `validation_dir` in `train_cls.py` (Validating Data Path),
-
-    `model_path` in `train_cls.py` (The saved Weight Path),
+**3.1. Segmentation State-of-the-art methods:**
   
-  + Configurate the setting. For example:
-
-    `BATCH_SIZE` in `train_cls.py` (Batch Size),
-
-    `initial_epochs`,`fine_tune_epochs` in `train_cls.py` (Round of Training),
-    
-    `base_learning_rate` in `train_cls.py` (Initial Learning Rate),    
-
-    `IMG_SIZE` in `train_cls.py` (The shape of input image),
-    
-  + Start Training!
-
-**3.2. Segmentation Model:** 
-  + Assigning your costumed path. For example:
-
-    `--train_path` in `train_seg.py` (Training Data Path),
-
-    `--valid_path` in `train_seg.py` (Validating Data Path),
-
-    `model_path` in `train_seg.py` (The saved Weight Path),
-  
-  + Configurate the setting. For example:
-
-    `batch_size` in `train_seg.py` (Batch Size),
-
-    `epochs` in `train_seg.py` (Round of Training),
-    
-    `lr` in `train_seg.py` (Initial Learning Rate),    
-
-    `shape` in `train_seg.py` (The shape of input image),
-    
-  + Start Training!
-
-**4. Testing Configuration:** 
-
-  + Assigning your costumed path. For example:
-
-    `--folder_name` in `link_copy.py` (External Test Set Path),
-
-    `model_seg ` in `link_copy.py` (Saved Segmentation Weight),
-
-    Result will be generated at `--folder_name + /output/`
-    
-  + Start Testing!
-
-
-**5. Segmentation State-of-the-art methods:**
-  
-  + Please enter the Segmentation_SOTA branch. Under the folder ``
+  + Please enter the Segmentation_SOTA branch. Under the folder `Seg_rawcode`:
+    - Modify the file
 
 
 ### 3.2 Evaluating your trained model:
