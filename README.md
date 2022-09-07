@@ -97,17 +97,19 @@ a single GeForce RTX 3080 GPU of 10 GB Memory.
 
 **2. Downloading necessary data:** 
 
-  + downloading dataset (Training, Testing and Validating) and move it into `./data/`, 
-    which can be found in this [download link (Onedrive)](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/EfUTJTiaiZdLs_-ZQYEoXwwBAW6GLyi0HGx4qyluNYeLXg?e=lkOcqL).
+  + Downloading dataset (Training, Testing and Validating) and move it into `./data/`, 
+    which can be found in this [download link (Onedrive)](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/EfUTJTiaiZdLs_-ZQYEoXwwBDb3SlahcZMQhzBXTvwFehA).
   
-  + downloading external test set and move it into `./example_data/`, 
-    which can be found in this [download link (Onedrive)](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/EXP9pL7rdR5Pg9PoVlAtujkBZWgD4cN7tPlC9WaTaLa3yA?e=f5cmos).
+  + Downloading external test set and move it into `./example_data/`, 
+    which can be found in this [download link (Onedrive)](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/EXP9pL7rdR5Pg9PoVlAtujkBhZn7o2VF1Czd3l8chOX_5Q).
     
-  + downloading classification weights and move it into root, 
-    which can be found in this [download link (Onedrive)](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/ESHTi0OQfEBDl0pTEd4EWyMBjXrKj0yxWaR4jUOHarH9Vw?e=4em0Mm).
+  + Downloading classification weights and move it into root, 
+    which can be found in this [download link (Onedrive)](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/ESHTi0OQfEBDl0pTEd4EWyMBXn02sjQPpMqNdHhktObr8w).
     
-  + downloading segmentation weights and move it into root,
-    which can be found in this [download link (Onedrive))](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/EXSUKzDdX_NLn8c0Q6phJmkBCBlgOvMlhvbkK6HhLLMmuQ?e=CHqZhs).
+  + Downloading segmentation weights and move it into root,
+    which can be found in this [download link (Onedrive))](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/EXSUKzDdX_NLn8c0Q6phJmkBx9ybtRB6pSzPYIgPLsxQ_w).
+
+  + We are preparing the DOI dataset which can be found in this [download link (DOI))](10.6084/m9.figshare.20787751)
 
    
 **3. Training Configuration:** 
@@ -120,6 +122,8 @@ a single GeForce RTX 3080 GPU of 10 GB Memory.
     `validation_dir` in `train_cls.py` (Validating Data Path),
 
     `model_path` in `train_cls.py` (The saved Weight Path),
+
+    If you want to change the training model, please modify `model_str`.
   
   + Configurate the setting. For example:
 
