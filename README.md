@@ -109,7 +109,7 @@ a single GeForce RTX 3080 GPU of 10 GB Memory.
   + Downloading segmentation weights and move it into root,
     which can be found in this [download link (Onedrive))](https://connectpolyu-my.sharepoint.com/:u:/g/personal/21118855r_connect_polyu_hk/EXSUKzDdX_NLn8c0Q6phJmkBx9ybtRB6pSzPYIgPLsxQ_w).
 
-  + We are preparing the DOI dataset which can be found in this [download link (DOI))](10.6084/m9.figshare.20787751)
+  + We are preparing the DOI dataset which can be found in this [download link (DOI)](https://10.6084/m9.figshare.20787751)
 
    
 **3. Training Configuration:** 
