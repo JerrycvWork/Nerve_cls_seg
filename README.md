@@ -3,11 +3,14 @@
 > **Authors:** 
 > Alex Ngai Nick Wong, 
 > Zebang He, 
-> Jung Sun Yoo, 
+> In Young Oh, 
+> Minfeng Yang, 
+> Jung Sun Yoo
+
 
 ## 1. Preface
 
-- This repository provides code for "_**Nerve Classification and Segmentation**_"
+- This repository provides code for "_**Nerve Classification and Segmentation**_", "_**Integration of nerve reflectance and artificial intelligence highlight peripheral nerves during cancer surgery**_"
 
 - If you have any questions about our paper, feel free to contact us. And if you are using the work for your research, please cite this paper ([BibTeX](#4-citation)).
 
@@ -16,9 +19,8 @@
 
 - Nerve Classification and Segmentation
   * [1. Preface](#1-preface)
-    + [1.1. :fire: NEWS :fire:](#11--fire--news--fire-)
-    + [1.2. Table of Contents](#12-table-of-contents)
-    + [1.3. State-of-the-art approaches](#13-SOTAs)
+    + [1.1. Table of Contents](#12-table-of-contents)
+    + [1.2. State-of-the-art approaches](#13-SOTAs)
   * [2. Overview](#2-overview)
     + [2.1. Introduction](#21-introduction)
     + [2.2. Framework Overview](#22-framework-overview)
@@ -40,6 +42,10 @@
 2. Jha, Debesh et al. “DoubleU-Net: A Deep Convolutional Neural Network for Medical Image Segmentation.” 2020 IEEE 33rd International Symposium on Computer-Based Medical Systems (CBMS) (2020): 558-564.
 
    paper link: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9183321
+
+3. Amyar A, Modzelewski R, Li H, Ruan S. Multi-task deep learning based CT imaging analysis for COVID-19 pneumonia: Classification and segmentation. Comput Biol Med. 2020 Nov;126:104037. doi: 10.1016/j.compbiomed.2020.104037. Epub 2020 Oct 8. PMID: 33065387; PMCID: PMC7543793.
+
+   paper link: https://pubmed.ncbi.nlm.nih.gov/33065387/ 
 
 
 ## 2. Overview
@@ -175,7 +181,9 @@ a single GeForce RTX 3080 GPU of 10 GB Memory.
 
 Python: For Classification, we use commercial software to calculate metrics. For Segmentation, the evaluation code is `dice_iou.py`.
 
-### 3.3 Video
+### 3.3 Sample Video
+
+In the folder `Movie S1-S3`, the meaning of video is shown in below:
 
 Movie S1. In vivo surgery video recording of exposing sciatic nerve using stereomicroscope
  
