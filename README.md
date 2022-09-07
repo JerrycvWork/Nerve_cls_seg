@@ -175,6 +175,15 @@ a single GeForce RTX 3080 GPU of 10 GB Memory.
 
 Python: For Classification, we use commercial software to calculate metrics. For Segmentation, the evaluation code is `dice_iou.py`.
 
+### 3.3 Video
+
+Movie S1. In vivo surgery video recording of exposing sciatic nerve using stereomicroscope
+ 
+Movie S2. Nerve detection and delineation using our proposed pipeline (DenseNET201+DoubleUNet) from each 600ms time interval between video frames with nerve segment annotation
+ 
+Movie S3. Real-time nerve detection and delineation of in vivo surgery video using our proposed pipeline (DenseNET201+DoubleUNet)
+
+
 ## 4. Citation
 
 Please cite our paper if you find the work useful: 
